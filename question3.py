@@ -14,8 +14,8 @@ def calc_energy(t):
     resistance = [sp.ln(r) for r in resistance]
     plt.plot(temperature, resistance)
     plt.show()
-    slope = (resistance[1] - resistance[3])/(temperature[3] - temperature[1])
-    e_g = slope*2*k/(sp.ln(1100/(sp.sqrt(2.09e37))))
+    slope = (resistance[3] - resistance[1])/(temperature[3] - temperature[1])
+    e_g = slope*2*k/(sp.ln(1100/(e*sp.sqrt(1.09e37))))
     print("Eg =", round(float(e_g), 3), "[eV]")
     calc_mobility(t, slope, float(e_g))
 
@@ -28,7 +28,7 @@ def calc_mobility(t, slope, e_g):
     ni_t = np.sqrt(nc_t*nv_t)*np.exp(-e_g/(2*k*t))
     mu_p = 1100*(t/300)**(-3/2)
     sl = float(slope)
-    rho = sp.exp(-sl/t)
+    rho = sp.exp(sl/t)
     sigma = 1/rho
     mu_n = (sigma-(e*ni_t*mu_p))/(e*ni_t)
     print("The electron mobility at the given temperature is:", round(float(mu_n), 3), "[cm^2/Vs]")
