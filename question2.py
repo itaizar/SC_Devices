@@ -1,3 +1,5 @@
+# Itai Zaretsky 205946114
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import constants as const

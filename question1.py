@@ -1,7 +1,7 @@
+# Itai Zaretsky 205946114
+
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Question 1 - Band gap as a Function of Temperature
 
 
 T = np.linspace(0, 1000)
